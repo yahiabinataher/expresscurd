@@ -27,7 +27,10 @@
                     </div>
                     <div class="my-3">
                         <label for="">Photo</label>
-                        <input class="form-control" type="file" name="productphoto">
+                        <input class="form-control img " type="file" name="productphoto">
+                    </div>
+                    <div class="my-3">
+                        <img style="width: 100%; height: 300px; object-fit: contain;" class="preview w-100" src="https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper-thumbnail.png" alt="" />
                     </div>
                     <button class="btn btn-primary">Create</button>
                    </form>
@@ -36,4 +39,12 @@
         </div>
     </div>
 </div>
+<script>
+    const photoInput = document.querySelector(".img")
+    const preview = document.querySelector(".preview")
+    photoInput.onchange = function(){
+        const imgSrc = URL.createObjectURL(this.files[0])
+        preview.src = imgSrc
+     }
+</script>
 

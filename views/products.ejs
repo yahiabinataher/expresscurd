@@ -1,0 +1,40 @@
+
+<div class="contaner ">
+    <div class="row justify-content-center my-5">
+        <div class="col-md-8">
+            <a href="/create" class="btn btn-primary">Add New Product</a>
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <tr>
+                        <th>#</th>
+                        <th>Photo</th>
+                        <th>Name</th>
+                        <th>ReguralPrice</th>
+                        <th>SalePrice</th>
+                        <th>Stock</th>
+                        <th>Action</th>
+                        </tr>
+                        <%products.forEach((item,index) => { %>
+                            <tr>
+                                <td><%=index+1 %></td>
+                                <td>
+                                    <img style="width: 20px; height: 60px; object-fit: contain;" class="w-100" src="products/<%= item.productphoto %>" alt="">
+                                </td>
+                                <td><%= item.name %></td>
+                                <td><%= item.regularPrice %></td>
+                                <td><%= item.salePrice %></td>
+                                <td><%= item.stock %></td>
+                                <td>
+                                    <a href="/singel/<%= item.slug %>"><i class="fa fa-eye btn btn-primary"></i></a>
+                                    <a href="/edit/<%= item.id %>"><i class="fa fa-edit btn btn-warning"></i></a>
+                                    <a href="/product-delete/<%= item.id %>"><i class="fa fa-trash-o btn btn-danger" aria-hidden="true"></i>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

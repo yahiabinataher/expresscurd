@@ -50,22 +50,22 @@ export const createProduct = (req,res) =>{
       stock,
       productphoto: req.file.filename
    }
-   console.log(email);
    //send mail
-   const transpoter = nodemailer.createTransport({
-      host:"smtp.google.com",
-      port:587,
-      auth:{
-         user:"yahiabinataher@gmail.com",
-         pass:"tzaq mkpa tbif nggs",
-      },
-   })
-   transpoter.sendMail({
-      from: "mail test <yahiabinataher@gmail.com>",
-      subject:"just chack",
-      to: email,
-      text:" hi yahia are you happy"
-   })
+   // const transpoter = nodemailer.createTransport({
+   //    host:"smtp.google.com",
+   //    port:587,
+   //    auth:{
+   //       user:"yahiabinataher@gmail.com",
+   //       pass:"tzaq mkpa tbif nggs",
+   //    },
+   // })
+   // transpoter.sendMail({
+   //    from: "mail test <yahiabinataher@gmail.com>",
+   //    subject:"just chack",
+   //    to: email,
+   //    text:" hi yahia are you happy"
+   // })
+
    productData.push(product)
    fs.writeFileSync("db/product.json",JSON.stringify(productData))
    res.redirect("/")
